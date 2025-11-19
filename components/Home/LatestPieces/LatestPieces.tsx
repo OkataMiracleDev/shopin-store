@@ -1,5 +1,6 @@
 import { barlow, eagle, fascinate } from "@/app/fonts";
 import { latestPiecesData } from "@/data/latestPieces";
+import { Poppins } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -17,16 +18,17 @@ const LatestPieces = () => {
           {latestPiecesData.map((item) => (
             <div
               key={item.id}
-              className="flex flex-col w-full md:w-1/4 h-80 py-1 md:py-2 md:px-1 items-center"
+              className="relative flex flex-col rounded-md w-full md:w-1/4 h-80 py-1 md:py-2 md:px-1 overflow-hidden items-center"
             >
               <Image
                 src={item.image}
                 alt={item.name}
                 width={200}
                 height={200}
-                className="w-full h-full object-cover"
+                className="w-full h-full rounded-md object-cover"
               />
-              <div className="absolute bg-white/60 bottom-2 rounded-t-xl w-79 flex flex-col px-4 items-left text-gray-700">
+              <div className="absolute bottom-1 md:bottom-2 left-0 right-0 md:left-1 md:right-1 h-20 bg-gradient-to-t from-black/35 to-transparent" />
+              <div className="card-info absolute bottom-1 md:bottom-2 left-0 right-0 md:left-1 md:right-1 z-10 bg-white/70 backdrop-blur-sm rounded-t-xl flex flex-col py-2 px-4 items-center md:items-start text-gray-800">
                 <p
                   className={`${barlow.className} mb-2 text-xl text-left font-semibold`}
                 >
@@ -37,14 +39,11 @@ const LatestPieces = () => {
                 </p>
                 <Link
                   href={item.link}
-                  className=" mb-2 text-sm font-light rounded-md w-fit px-4 py-1 bg-gray-700 text-white"
+                  className="mb-1 text-sm font-medium rounded-md w-fit px-4 py-1 bg-gray-900 text-white hover:bg-gray-700 transition-colors"
                 >
                   View Details
                 </Link>
               </div>
-              <p className={`${barlow.className} text-sm font-bold`}>
-                {item.size}
-              </p>
             </div>
           ))}
         </div>
