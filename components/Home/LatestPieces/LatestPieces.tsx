@@ -10,7 +10,7 @@ const LatestPieces = () => {
     <div className="pt-10">
       <div className="flex flex-col gap-6 px-6">
         <h1
-          className={`${barlow.className} px-6 text-xl md:text-2xl font-bold`}
+          className={`${barlow.className} md:px-6 text-xl md:text-2xl font-bold`}
         >
           Latest Pieces
         </h1>
@@ -28,7 +28,7 @@ const LatestPieces = () => {
                 className="w-full h-full rounded-md object-cover"
               />
               <div className="absolute bottom-1 md:bottom-2 left-0 right-0 md:left-1 md:right-1 h-20 bg-gradient-to-t from-black/35 to-transparent" />
-              <div className="card-info absolute bottom-1 md:bottom-2 left-0 right-0 md:left-1 md:right-1 z-10 bg-white/70 backdrop-blur-sm rounded-t-xl flex flex-col py-2 px-4 items-center md:items-start text-gray-800">
+              <div className="card-info absolute bottom-1 md:bottom-2 left-0 right-0 md:left-1 md:right-1 z-10 bg-white/50 backdrop-blur-sm rounded-t-xl flex flex-col py-2 px-4 items-start text-gray-800">
                 <p
                   className={`${barlow.className} mb-2 text-xl text-left font-semibold`}
                 >
