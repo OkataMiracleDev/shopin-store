@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="bg-gray-300 pt-30 pb-20 h-full w-full">
+    <div className="bg-gray-300 pt-10 h-full w-full overflow-hidden">
       <HomePage />
     </div>
   );

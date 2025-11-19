@@ -1,0 +1,34 @@
+export const latestPiecesData = [
+  {
+    id: 1,
+    name: "Vintage Tee",
+    price: "NGN 6000",
+    link: "#",
+    size: "L",
+    image: "/shop/tees/tee-15.jpg",
+  },
+  {
+    id: 2,
+    name: "Bottega Round Bag",
+    price: "NGN 10000",
+    link: "#",
+    size: "M",
+    image: "/shop/bags/bag-2.jpg",
+  },
+  {
+    id: 3,
+    name: "Stone-washed Jeans",
+    price: "NGN 6500",
+    link: "#",
+    size: "L",
+    image: "/shop/pants/pants-4.jpg",
+  },
+  {
+    id: 4,
+    name: "Classy Crop Tops",
+    price: "NGN 5500",
+    link: "#",
+    size: "S",
+    image: "/shop/croptops/croptop-3.jpg",
+  },
+];

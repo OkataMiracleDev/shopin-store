@@ -13,7 +13,7 @@ const NavBar = () => {
   const [mobileShopOpen, setMobileShopOpen] = useState(false);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[10000] bg-white shadow-lg shadow-gray-500">
+    <div className="fixed top-0 left-0 right-0 z-[10000] bg-white shadow-lg shadow-gray-400">
       <div className="px-6 py-4">
         <div className="md:hidden flex items-center justify-between">
           <div className={`${eagle.className} text-2xl font-bold`}>Shopin</div>
@@ -78,7 +78,7 @@ const NavBar = () => {
               );
             })}
           </div>
-          <button className="px-4 py-2 bg-gray-700 text-white rounded-md flex items-center gap-2">
+          <button className="px-4 py-2 bg-gray-700 hover:bg-gray-500 text-white hover:text-gray-300 rounded-md flex items-center gap-2 transition-all duration-300">
             <BsCart4 className="text-2xl" />
             <span className="text-lg font-medium">Cart</span>
           </button>
@@ -90,7 +90,7 @@ const NavBar = () => {
           mobileOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex flex-col gap-4 p-6">
+        <div className="flex flex-col h-full gap-4 px-6 py-10">
           {navLinks.map((link) => {
             if (link.title === "Shop") {
               return (
@@ -98,7 +98,7 @@ const NavBar = () => {
                   <div className="flex items-center justify-between">
                     <Link
                       href={link.url}
-                      className="text-xl font-medium"
+                      className="text-2xl font-medium"
                       onClick={() => setMobileOpen(false)}
                     >
                       Shop
@@ -117,7 +117,7 @@ const NavBar = () => {
                         <Link
                           href={s.url}
                           key={s.id}
-                          className="py-2 text-base"
+                          className="py-2 text-lg"
                           onClick={() => setMobileOpen(false)}
                         >
                           {s.title}
@@ -132,7 +132,7 @@ const NavBar = () => {
               <Link
                 href={link.url}
                 key={link.id}
-                className="text-xl font-medium"
+                className="text-2xl font-medium"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.title}
