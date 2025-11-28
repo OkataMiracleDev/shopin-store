@@ -3,11 +3,12 @@ import { getProductsByCategory, Product } from "@/data/products";
 import { barlow } from "@/app/fonts";
 
 type Props = {
-  params: { category: string };
+  params: Promise<{ category: string }>;
 };
 
-const CategoryPage = ({ params }: Props) => {
-  const raw = decodeURIComponent(params.category);
+const CategoryPage = async ({ params }: Props) => {
+  const { category: raw } = await params;
+  const decoded = decodeURIComponent(raw);
   const map: Record<string, Product["category"]> = {
     Bags: "Bags",
     bags: "Bags",
@@ -22,7 +23,7 @@ const CategoryPage = ({ params }: Props) => {
     "Tee-Shirts": "Tee-Shirts",
     "tee-shirts": "Tee-Shirts",
   };
-  const category = map[raw] ?? (raw as Product["category"]);
+  const category = map[decoded] ?? (decoded as Product["category"]);
   const title = category;
   const items = getProductsByCategory(category);
 

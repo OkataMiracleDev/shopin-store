@@ -13,5 +13,4 @@ export const gownsProducts: Product[] = buildCategory("Gowns", "gowns", [
   "gown-9.jpg",
   "gown-10.jpg",
   "gown-11.jpg",
-  "gown-12.jpg",
 ]);

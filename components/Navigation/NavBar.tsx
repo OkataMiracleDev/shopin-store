@@ -4,6 +4,7 @@ import { navLinks, shopLinks } from "@/constants/navLinks";
 import Link from "next/link";
 import React, { useState } from "react";
 import { BsCart4 } from "react-icons/bs";
+import { useCart } from "@/components/Cart/CartProvider";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import { FiChevronDown } from "react-icons/fi";
 
@@ -12,15 +13,26 @@ const NavBar = () => {
   const [shopOpen, setShopOpen] = useState(false);
   const [mobileShopOpen, setMobileShopOpen] = useState(false);
 
+  const { count } = useCart();
   return (
     <div className="fixed top-0 left-0 right-0 z-[10000] bg-white shadow-lg shadow-gray-400">
       <div className="px-6 py-4">
         <div className="md:hidden flex items-center justify-between">
           <div className={`${eagle.className} text-2xl font-bold`}>Shopin</div>
-          <button className="px-4 py-2 bg-gray-700 text-white rounded-md flex items-center gap-2">
-            <BsCart4 className="text-2xl" />
+          <Link
+            href="/Cart"
+            className="px-4 py-2 bg-gray-700 text-white rounded-md flex items-center gap-2"
+          >
+            <div className="relative">
+              <BsCart4 className="text-2xl" />
+              {count > 0 && (
+                <span className="absolute -top-2 -right-2 text-xs bg-red-600 text-white rounded-full px-1">
+                  {count}
+                </span>
+              )}
+            </div>
             <span className="text-lg font-medium">Cart</span>
-          </button>
+          </Link>
           <button
             aria-label="Toggle menu"
             onClick={() => setMobileOpen((v) => !v)}
@@ -78,10 +90,20 @@ const NavBar = () => {
               );
             })}
           </div>
-          <button className="px-4 py-2 bg-gray-700 hover:bg-gray-500 text-white hover:text-gray-300 rounded-md flex items-center gap-2 transition-all duration-300">
-            <BsCart4 className="text-2xl" />
+          <Link
+            href="/Cart"
+            className="px-4 py-2 bg-gray-700 hover:bg-gray-500 text-white hover:text-gray-300 rounded-md flex items-center gap-2 transition-all duration-300"
+          >
+            <div className="relative">
+              <BsCart4 className="text-2xl" />
+              {count > 0 && (
+                <span className="absolute -top-2 -right-2 text-xs bg-red-600 text-white rounded-full px-1">
+                  {count}
+                </span>
+              )}
+            </div>
             <span className="text-lg font-medium">Cart</span>
-          </button>
+          </Link>
         </div>
       </div>
 
