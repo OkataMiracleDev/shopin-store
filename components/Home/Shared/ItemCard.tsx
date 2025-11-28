@@ -11,7 +11,7 @@ type ItemCardProps = {
 
 const ItemCard = ({ image, name, price, link, slug }: ItemCardProps) => {
   return (
-    <div className="relative flex flex-col rounded-md w-full md:w-1/4 h-80 py-1 md:py-2 md:px-1 overflow-hidden items-center">
+    <div className="relative flex flex-col rounded-md w-full h-80 py-1 md:py-2 md:px-1 overflow-hidden items-center">
       <Image
         src={image}
         alt={name}

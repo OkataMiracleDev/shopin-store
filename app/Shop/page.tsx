@@ -17,7 +17,10 @@ const ShopPage = () => {
 
   const all = useMemo(() => getAllProducts(), []);
   const searched = useMemo(() => (debouncedQ ? searchProducts(debouncedQ) : all), [debouncedQ, all]);
-  const items = useMemo(() => (category ? searched.filter((p) => p.category === category) : searched), [searched, category]);
+  const items = useMemo(
+    () => (category ? searched.filter((p) => p.category === category) : searched),
+    [searched, category]
+  );
 
   return (
     <div className="pt-10 px-6">
@@ -38,7 +41,11 @@ const ShopPage = () => {
           {shopLinks.map((s) => (
             <button
               key={s.id}
-              onClick={() => setCategory(s.title as Product["category"])}
+              onClick={() =>
+                setCategory((prev) =>
+                  prev === (s.title as Product["category"]) ? null : (s.title as Product["category"]) 
+                )
+              }
               className={`px-3 py-1 rounded-full border ${category === (s.title as Product["category"]) ? "bg-gray-900 text-white border-gray-900" : "bg-white text-gray-700 border-gray-300"}`}
             >
               {s.title}
@@ -50,7 +57,7 @@ const ShopPage = () => {
         </div>
         <div className="mt-2 text-sm text-gray-600">{items.length} results</div>
       </div>
-      <div className="relative flex flex-col md:flex-row flex-wrap gap-y-4 w-full justify-between">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {items.map((item) => (
           <ItemCard
             key={item.id}

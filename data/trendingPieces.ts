@@ -7,7 +7,7 @@ export const trendingPiecesBase = [
     price: "NGN 10000",
     link: "#",
     image: "/shop/bags/bag-2.jpg",
-    slug: "bottega-round-bag-2",
+    slug: "bag-2",
   },
   {
     id: 102,
@@ -15,7 +15,7 @@ export const trendingPiecesBase = [
     price: "NGN 12000",
     link: "#",
     image: "/shop/bags/bag-3.jpg",
-    slug: "classic-tote-3",
+    slug: "bag-3",
   },
   {
     id: 103,
@@ -23,7 +23,7 @@ export const trendingPiecesBase = [
     price: "NGN 9000",
     link: "#",
     image: "/shop/bags/bag-4.jpg",
-    slug: "vintage-handbag-4",
+    slug: "bag-4",
   },
   {
     id: 104,
@@ -31,7 +31,7 @@ export const trendingPiecesBase = [
     price: "NGN 11000",
     link: "#",
     image: "/shop/bags/bag-1.jpg",
-    slug: "classic-tote-1",
+    slug: "bag-1",
   },
   {
     id: 105,
@@ -39,7 +39,7 @@ export const trendingPiecesBase = [
     price: "NGN 5500",
     link: "#",
     image: "/shop/croptops/croptop-1.jpg",
-    slug: "summer-croptop-1",
+    slug: "croptop-1",
   },
   {
     id: 106,
@@ -47,7 +47,7 @@ export const trendingPiecesBase = [
     price: "NGN 5200",
     link: "#",
     image: "/shop/croptops/croptop-2.jpg",
-    slug: "casual-croptop-2",
+    slug: "croptop-2",
   },
   {
     id: 107,
@@ -55,7 +55,7 @@ export const trendingPiecesBase = [
     price: "NGN 6000",
     link: "#",
     image: "/shop/croptops/croptop-3.jpg",
-    slug: "elegant-croptop-3",
+    slug: "croptop-3",
   },
   {
     id: 108,
@@ -63,7 +63,7 @@ export const trendingPiecesBase = [
     price: "NGN 8000",
     link: "#",
     image: "/shop/footwear/footwear-1.jpg",
-    slug: "urban-sneakers-1",
+    slug: "footwear-1",
   },
   {
     id: 109,
@@ -71,7 +71,7 @@ export const trendingPiecesBase = [
     price: "NGN 7800",
     link: "#",
     image: "/shop/footwear/footwear-2.jpg",
-    slug: "classic-trainers-2",
+    slug: "footwear-2",
   },
 ];
 
