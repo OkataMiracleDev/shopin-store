@@ -1,8 +1,7 @@
 import { barlow, eagle, fascinate } from "@/app/fonts";
 import { latestPiecesData } from "@/data/latestPieces";
 import { Poppins } from "next/font/google";
-import Image from "next/image";
-import Link from "next/link";
+import ItemCard from "../Shared/ItemCard";
 import React from "react";
 
 const LatestPieces = () => {
@@ -16,35 +15,14 @@ const LatestPieces = () => {
         </h1>
         <div className="relative flex flex-col md:flex-row w-full justify-between">
           {latestPiecesData.map((item) => (
-            <div
+            <ItemCard
               key={item.id}
-              className="relative flex flex-col rounded-md w-full md:w-1/4 h-80 py-1 md:py-2 md:px-1 overflow-hidden items-center"
-            >
-              <Image
-                src={item.image}
-                alt={item.name}
-                width={200}
-                height={200}
-                className="w-full h-full rounded-md object-cover"
-              />
-              <div className="absolute bottom-1 md:bottom-2 left-0 right-0 md:left-1 md:right-1 h-20 bg-gradient-to-t from-black/35 to-transparent" />
-              <div className="card-info absolute bottom-1 md:bottom-2 left-0 right-0 md:left-1 md:right-1 z-10 bg-white/50 backdrop-blur-sm rounded-t-xl flex flex-col py-2 px-4 items-start text-gray-800">
-                <p
-                  className={`${barlow.className} mb-2 text-xl text-left font-semibold`}
-                >
-                  {item.name}
-                </p>
-                <p className={`${barlow.className} mb-2 text-sm font-bold`}>
-                  {item.price}
-                </p>
-                <Link
-                  href={item.link}
-                  className="mb-1 text-sm font-medium rounded-md w-fit px-4 py-1 bg-gray-900 text-white hover:bg-gray-700 transition-colors"
-                >
-                  View Details
-                </Link>
-              </div>
-            </div>
+              image={item.image}
+              name={item.name}
+              price={item.price}
+              slug={item.slug}
+              link={item.link}
+            />
           ))}
         </div>
       </div>
