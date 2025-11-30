@@ -1,7 +1,7 @@
 "use client";
 import { barlow } from "@/app/fonts";
 import ItemCard from "@/components/Home/Shared/ItemCard";
-import { getAllProducts, searchProducts, Product } from "@/data/products";
+import { getAllProducts, getProductsByCategory, Product } from "@/data/products";
 import { shopLinks } from "@/constants/navLinks";
 import React, { useEffect, useMemo, useState } from "react";
 
@@ -16,11 +16,14 @@ const ShopPage = () => {
   }, [q]);
 
   const all = useMemo(() => getAllProducts(), []);
-  const searched = useMemo(() => (debouncedQ ? searchProducts(debouncedQ) : all), [debouncedQ, all]);
-  const items = useMemo(
-    () => (category ? searched.filter((p) => p.category === category) : searched),
-    [searched, category]
-  );
+  const items = useMemo(() => {
+    const base = category ? getProductsByCategory(category) : all;
+    if (!debouncedQ) return base;
+    const q = debouncedQ.toLowerCase();
+    return base.filter(
+      (p) => p.name.toLowerCase().includes(q) || p.category.toLowerCase().includes(q)
+    );
+  }, [all, category, debouncedQ]);
 
   return (
     <div className="pt-10 px-6">
