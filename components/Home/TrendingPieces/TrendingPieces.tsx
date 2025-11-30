@@ -12,7 +12,7 @@ const TrendingPieces = () => {
         >
           Trending Pieces
         </h1>
-        <div className="relative flex flex-col md:flex-row w-full justify-between">
+        <div className="relative flex flex-col md:grid grid-cols-4 w-full justify-between">
           {items.map((item) => (
             <ItemCard
               key={item.id}
