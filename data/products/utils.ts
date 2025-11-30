@@ -2,15 +2,51 @@ import { Product } from "./types";
 
 export const randInt = (min: number, max: number) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
-export const priceNGN = (min = 5000, max = 20000) => `NGN ${randInt(min, max)}`;
+export const priceNGN = (min = 3500, max = 20000) => `NGN ${randInt(min, max)}`;
 
 export const namePools: Record<Product["category"], string[]> = {
-  Bags: ["Classic Tote", "Bottega Round Bag", "Vintage Handbag", "Statement Bag", "City Satchel"],
-  Croptops: ["Summer Croptop", "Casual Croptop", "Elegant Croptop", "Ribbed Croptop", "Sport Croptop"],
-  Footwear: ["Urban Sneakers", "Classic Trainers", "Street Kicks", "Leather Loafers", "Sport Runners"],
-  Gowns: ["Evening Gown", "Silk Dress", "Floral Gown", "Velvet Gown", "A-line Dress"],
-  Pants: ["Stone-washed Jeans", "Chino Pants", "Cargo Trousers", "Slim-fit Jeans", "Wide-leg Pants"],
-  "Tee-Shirts": ["Vintage Tee", "Graphic Tee", "Oversized Tee", "Pocket Tee", "Crew Neck Tee"],
+  Bags: [
+    "Classic Round Bag",
+    "Bottega Round Bag",
+    "Vintage Handbag",
+    "Statement Bag",
+    "City Satchel",
+  ],
+  Croptops: [
+    "YSL Croptop",
+    "Casual Croptop",
+    "Cherry Croptop",
+    "Ribbed Croptop",
+    "Elegant Croptop",
+  ],
+  Footwear: [
+    "Urban Sneakers",
+    "Classic Trainers",
+    "Street Kicks",
+    "Leather Loafers",
+    "Sport Runners",
+  ],
+  Gowns: [
+    "Evening Gown",
+    "Silk Dress",
+    "Floral Gown",
+    "Velvet Gown",
+    "A-line Dress",
+  ],
+  Pants: [
+    "Stone-washed Jeans",
+    "Chino Pants",
+    "Cargo Trousers",
+    "Slim-fit Jeans",
+    "Wide-leg Pants",
+  ],
+  "Tee-Shirts": [
+    "Vintage Tee",
+    "Graphic Tee",
+    "Oversized Tee",
+    "Pocket Tee",
+    "Crew Neck Tee",
+  ],
 };
 
 export const buildCategory = (
