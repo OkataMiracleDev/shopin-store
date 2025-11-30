@@ -12,13 +12,7 @@ export const namePools: Record<Product["category"], string[]> = {
     "Statement Bag",
     "City Satchel",
   ],
-  Croptops: [
-    "YSL Croptop",
-    "Casual Croptop",
-    "Cherry Croptop",
-    "Ribbed Croptop",
-    "Elegant Croptop",
-  ],
+  Croptops: ["YSL Croptop", "Cherry Croptop", "Elegant Croptop"],
   Footwear: [
     "Urban Sneakers",
     "Classic Trainers",
